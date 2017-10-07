@@ -33,7 +33,7 @@ class App {
 
         var that = this;
         $.ajax({
-            url : "http://192.168.110.49/API/note",
+            url : "http://192.168.0.2/API/note",
             method : "POST",
             data : {
                 title : note.title,
@@ -62,7 +62,7 @@ class App {
     readNotes(){
         var that = this;
         $.ajax({
-            url : "http://192.168.110.49/API/notes",
+            url : "http://192.168.0.2/API/notes",
             method : "get",
             dataType : "json",
             success : function( data ){
@@ -85,7 +85,7 @@ class App {
         var note = this.notes[index];
         var that = this;
         $.ajax({
-            url : "http://192.168.110.49/API/note/" + note.id,
+            url : "http://192.168.0.2/API/note/" + note.id,
             method : "DELETE",
             dataType : "json",
             success : function( data ){
@@ -110,7 +110,7 @@ class App {
         var that = this;
 
         $.ajax({
-            url: "http://192.168.110.49/API/note/" + note.id,
+            url: "http://192.168.0.2/API/note/" + note.id,
             method: "GET",
             dataType: "json",
             success : function( data ){
@@ -143,7 +143,7 @@ class App {
         //Ici pour les requetes PUT uniquement, on stringify les données
         //avec JSON.stringify...
         $.ajax({
-            url: "http://192.168.110.49/API/note/" + note.id,
+            url: "http://192.168.0.2/API/note/" + note.id,
             method: "PUT",
             data: JSON.stringify({
                 title: title,
